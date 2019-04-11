@@ -1,6 +1,7 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class App implements MyInterface {
     public static void main(String[] args) throws Exception {
@@ -44,14 +45,22 @@ public class App implements MyInterface {
         aList.add(new Student(4,"Roe"));
         aList.add(new Student(5,"Sandra"));
 
-        System.out.println(aList.get(1).getName());
+        //System.out.println(aList.get(1).getName());
 
         aList.forEach(x -> {
             //x.setName(Integer.toString(x.getId()));
         });
 
         aList.forEach(x -> {
-             System.out.println(x.getName());
+             // System.out.println(x.getName());
+        });
+
+        HashMap <Integer, Student> hashMap = new HashMap<Integer, Student>();
+        hashMap.put(1, me);
+        hashMap.put(null, aList.get(1));
+
+        hashMap.forEach((x, student) -> {
+            System.out.println(student.getName());
         });
 
     }
