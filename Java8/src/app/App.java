@@ -3,6 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class App implements MyInterface {
@@ -43,7 +44,7 @@ public class App implements MyInterface {
         aList.add(new Student(2, "Juan"));
         aList.add(new Student(3, "Pepe"));
         aList.add(new Student(4, "Roe"));
-        aList.add(new Student(5, "Sandra"));
+        aList.add(new Student(5, "Handra"));
 
         // System.out.println(aList.get(1).getName());
 
@@ -66,9 +67,15 @@ public class App implements MyInterface {
          //MAP CREATE A NEW LIST
         List<Student> bList = aList.stream().map(x -> new Student(x.getId(),x.getName()+" B")).collect(Collectors.toList());
         bList.forEach(student -> {
+           // System.out.println(student.getName());
+        });
+
+        //STREAM FILTER
+
+        List <Student> cList = aList.stream().filter(x -> x.getName().startsWith("H")).collect(Collectors.toList());
+        cList.forEach(student -> {
             System.out.println(student.getName());
         });
-        
         
     }
 
