@@ -3,7 +3,6 @@ package app;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class App implements MyInterface {
@@ -45,6 +44,9 @@ public class App implements MyInterface {
         aList.add(new Student(3, "Pepe"));
         aList.add(new Student(4, "Roe"));
         aList.add(new Student(5, "Handra"));
+        aList.add(new Student(5, "Alma"));
+        aList.add(new Student(5, "Hugo"));
+        aList.add(new Student(5, "Carl"));
 
         // System.out.println(aList.get(1).getName());
 
@@ -53,7 +55,7 @@ public class App implements MyInterface {
         });
 
         aList.forEach(x -> {
-            // System.out.println(x.getName());
+           //  System.out.println(x.getName());
         });
 
         HashMap<Integer, Student> hashMap = new HashMap<Integer, Student>();
@@ -74,9 +76,16 @@ public class App implements MyInterface {
 
         List <Student> cList = aList.stream().filter(x -> x.getName().startsWith("H")).collect(Collectors.toList());
         cList.forEach(student -> {
-            System.out.println(student.getName());
+          //  System.out.println(student.getName());
         });
+
+
+        //SORT FILTER
+       List <Student> dList = aList.stream().sorted((o1, o2)-> o1.getName().compareTo(o2.getName())).collect(Collectors.toList());
         
+       dList.forEach(student -> {
+           System.out.println(student.getName());
+       });
     }
 
     @Override
