@@ -84,8 +84,11 @@ public class App implements MyInterface {
        List <Student> dList = aList.stream().sorted((o1, o2)-> o1.getName().compareTo(o2.getName())).collect(Collectors.toList());
         
        dList.forEach(student -> {
-           System.out.println(student.getName());
+          // System.out.println(student.getName());
        });
+
+       Palindrome palindrome = new Palindrome();
+       System.out.println(palindrome.isPalindromeBoolean("anitalavalatina"));
     }
 
     @Override
