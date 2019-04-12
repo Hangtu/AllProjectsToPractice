@@ -88,7 +88,7 @@ public class App implements MyInterface {
        });
 
        Palindrome palindrome = new Palindrome();
-       System.out.println(palindrome.isPalindromeBoolean("anitalavalatina"));
+       System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
     }
 
     @Override
