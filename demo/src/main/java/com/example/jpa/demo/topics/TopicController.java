@@ -34,5 +34,11 @@ public Topic findOneTopic(@PathVariable Integer id) {
 public void updateTopic(@RequestBody Topic topic) {
     topicService.updateTopic(topic);
 }
+
+@RequestMapping(value="topics/{id}", method=RequestMethod.DELETE)
+public void deleteTopic(@PathVariable Integer id) {
+    topicService.deleteTopic(id);
+}
+  
   
 }
