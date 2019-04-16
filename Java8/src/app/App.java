@@ -110,5 +110,6 @@ public class App implements MyInterface, Runnable {
      Thread th = Thread.currentThread();
         System.out.println(this.flag);
         this.flag = true;
+        System.gc();
     }
 }
