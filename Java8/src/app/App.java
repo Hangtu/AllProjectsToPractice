@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class App implements MyInterface {
+public class App implements MyInterface, Runnable {
+
+    private volatile Boolean flag = false;
     public static void main(String[] args) throws Exception {
 
         System.out.println("Hello Java 8");
@@ -88,11 +90,25 @@ public class App implements MyInterface {
        });
 
        Palindrome palindrome = new Palindrome();
-       System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
+      // System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
+
+       Thread th1 = new Thread(new App());
+       Thread th2 = new Thread(new App());
+       th1.start();
+       th1.sleep(1000);
+       th2.start();
+    
     }
 
     @Override
     public void multiplication(Student s) {
 
+    }
+
+    @Override
+    public void run() {
+     Thread th = Thread.currentThread();
+        System.out.println(this.flag);
+        this.flag = true;
     }
 }
