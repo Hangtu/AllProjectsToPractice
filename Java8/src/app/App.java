@@ -12,13 +12,14 @@ public class App implements MyInterface, Runnable {
 
         System.out.println("Hello Java 8");
 
-        int[] b = new int[2];
-        String myName = "Hang Tu";
+        // int[] b = new int[2];
+       // String myName = "Hang Tu";
         int i = 0;
         int j = 1;
 
         try {
             int r = j / i;
+            System.out.println(r);
         } catch (ArithmeticException e) {
             // System.err.println(e.toString());
         } catch (Exception eArithmeticException) {
@@ -90,12 +91,12 @@ public class App implements MyInterface, Runnable {
        });
 
        Palindrome palindrome = new Palindrome();
-      // System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
+        System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
 
        Thread th1 = new Thread(new App());
        Thread th2 = new Thread(new App());
        th1.start();
-       th1.sleep(1000);
+      // th1.sleep(1000);
        th2.start();
     
     }
@@ -107,7 +108,7 @@ public class App implements MyInterface, Runnable {
 
     @Override
     public void run() {
-     Thread th = Thread.currentThread();
+     // Thread th = Thread.currentThread();
         System.out.println(this.flag);
         this.flag = true;
         System.gc();
