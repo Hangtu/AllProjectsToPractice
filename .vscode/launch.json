@@ -8,6 +8,12 @@
             "type": "java",
             "name": "CodeLens (Launch) - DemoApplication",
             "request": "launch",
+            "mainClass": "com.example.apiconsume.apiconsume.DemoApplication"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
             "mainClass": "com.example.jpa.demo.DemoApplication",
             "projectName": "demo"
         },
