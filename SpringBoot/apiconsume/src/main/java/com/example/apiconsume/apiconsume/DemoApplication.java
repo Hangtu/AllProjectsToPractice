@@ -7,8 +7,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+
+import java.io.IOException;
 import java.util.Arrays;
 import com.example.apiconsume.apiconsume.user.MyResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,11 +45,27 @@ public class DemoApplication {
 		headers.add("user-agent",
 				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, likeGecko) Chrome/54.0.2840.99 Safari/537.36");
 		HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		ResponseEntity<Object> response = restTemplate.exchange("https://reqres.in/api/users/2", HttpMethod.GET,
-				entity, Object.class);
+		ResponseEntity<String> response = restTemplate.exchange("https://reqres.in/api/users/2", HttpMethod.GET, entity,
+				String.class);
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getStatusCodeValue());
 		System.out.println(response.getBody());
+
+
+		//MAP JSON TO OBJECT
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			MyResponse jackResponse = mapper.readValue(response.getBody().toString(), MyResponse.class);
+			System.out.println(jackResponse.getData().getFirst_name());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		//WITHOUT MAPPER
+		ResponseEntity<MyResponse> response3 = restTemplate.exchange("https://reqres.in/api/users/2", HttpMethod.GET, entity,
+		MyResponse.class);
+		System.out.println(response3.getBody().getData().getLast_name());
 		//MyResponse data = response.getBody();
 		//System.out.println(response);
 		//System.out.println("final");

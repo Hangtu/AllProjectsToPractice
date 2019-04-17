@@ -4,7 +4,7 @@ package com.example.apiconsume.apiconsume.user;
  */
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class Data {
 
     private Long id;
     private String first_name;
