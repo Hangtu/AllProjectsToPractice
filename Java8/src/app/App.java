@@ -2,7 +2,10 @@ package app;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class App implements MyInterface, Runnable {
@@ -98,6 +101,26 @@ public class App implements MyInterface, Runnable {
        th1.start();
       // th1.sleep(1000);
        th2.start();
+
+       Set <String> hSet = new HashSet<>();
+       hSet.add("b");
+       hSet.add("a");
+       hSet.add("c");
+       hSet.add("3");
+
+       hSet.forEach( x -> {
+        //System.out.println(x);
+       });
+
+       Set <String> tSet = new TreeSet<>();
+       tSet.add("b");
+       tSet.add("a");
+       tSet.add("c");
+       tSet.add("b");
+
+       tSet.forEach(x -> {
+         //  System.out.println(x);
+       });
     
     }
 
@@ -109,7 +132,7 @@ public class App implements MyInterface, Runnable {
     @Override
     public void run() {
      // Thread th = Thread.currentThread();
-        System.out.println(this.flag);
+       // System.out.println(this.flag);
         this.flag = true;
         System.gc();
     }
