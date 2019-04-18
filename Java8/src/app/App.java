@@ -6,17 +6,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public class App implements MyInterface, Runnable {
 
     private volatile Boolean flag = false;
+
     public static void main(String[] args) throws Exception {
 
         System.out.println("Hello Java 8");
 
         // int[] b = new int[2];
-       // String myName = "Hang Tu";
+        // String myName = "Hang Tu";
         int i = 0;
         int j = 1;
 
@@ -38,7 +40,7 @@ public class App implements MyInterface, Runnable {
         // System.out.println(me.getName()); // get static member of the class;
 
         MyInterface myInterface = (x) -> {
-          //  System.out.println(me.getId() * 4);
+            // System.out.println(me.getId() * 4);
         };
         myInterface.multiplication(me); // Print the lambda expression;
 
@@ -61,7 +63,7 @@ public class App implements MyInterface, Runnable {
         });
 
         aList.forEach(x -> {
-           //  System.out.println(x.getName());
+            // System.out.println(x.getName());
         });
 
         HashMap<Integer, Student> hashMap = new HashMap<Integer, Student>();
@@ -69,59 +71,69 @@ public class App implements MyInterface, Runnable {
         hashMap.put(null, aList.get(1));
 
         hashMap.forEach((x, student) -> {
-          //  System.out.println(student.getName());
+            // System.out.println(student.getName());
         });
 
-         //MAP CREATE A NEW LIST
-        List<Student> bList = aList.stream().map(x -> new Student(x.getId(),x.getName()+" B")).collect(Collectors.toList());
+        // MAP CREATE A NEW LIST
+        List<Student> bList = aList.stream().map(x -> new Student(x.getId(), x.getName() + " B"))
+                .collect(Collectors.toList());
         bList.forEach(student -> {
-           // System.out.println(student.getName());
+            // System.out.println(student.getName());
         });
 
-        //STREAM FILTER
+        // STREAM FILTER
 
-        List <Student> cList = aList.stream().filter(x -> x.getName().startsWith("H")).collect(Collectors.toList());
+        List<Student> cList = aList.stream().filter(x -> x.getName().startsWith("H")).collect(Collectors.toList());
         cList.forEach(student -> {
-          //  System.out.println(student.getName());
+            // System.out.println(student.getName());
         });
 
+        // SORT FILTER
+        List<Student> dList = aList.stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName()))
+                .collect(Collectors.toList());
 
-        //SORT FILTER
-       List <Student> dList = aList.stream().sorted((o1, o2)-> o1.getName().compareTo(o2.getName())).collect(Collectors.toList());
-        
-       dList.forEach(student -> {
-          // System.out.println(student.getName());
-       });
+        dList.forEach(student -> {
+            // System.out.println(student.getName());
+        });
 
-       Palindrome palindrome = new Palindrome();
+        Palindrome palindrome = new Palindrome();
         System.out.println(palindrome.isPalindromeBoolean("anitalavalatinas"));
 
-       Thread th1 = new Thread(new App());
-       Thread th2 = new Thread(new App());
-       th1.start();
-      // th1.sleep(1000);
-       th2.start();
+        Thread th1 = new Thread(new App());
+        Thread th2 = new Thread(new App());
+        th1.start();
+        // th1.sleep(1000);
+        th2.start();
 
-       Set <String> hSet = new HashSet<>();
-       hSet.add("b");
-       hSet.add("a");
-       hSet.add("c");
-       hSet.add("3");
+        Set<String> hSet = new HashSet<>();
+        hSet.add("b");
+        hSet.add("a");
+        hSet.add("c");
+        hSet.add("3");
 
-       hSet.forEach( x -> {
-        //System.out.println(x);
-       });
+        hSet.forEach(x -> {
+            // System.out.println(x);
+        });
 
-       Set <String> tSet = new TreeSet<>();
-       tSet.add("b");
-       tSet.add("a");
-       tSet.add("c");
-       tSet.add("b");
+        Set<String> tSet = new TreeSet<>();
+        tSet.add("b");
+        tSet.add("a");
+        tSet.add("c");
+        tSet.add("b");
 
-       tSet.forEach(x -> {
-         //  System.out.println(x);
-       });
-    
+        tSet.forEach(x -> {
+            // System.out.println(x);
+        });
+
+        ConcurrentHashMap m = new ConcurrentHashMap();
+        m.put(100, "Hello");
+        m.put(101, "Geeks");
+        m.put(102, "Geeks");
+        m.put(null, "Geeks");
+
+        m.forEach((x, y) -> {
+            System.out.println(x + "" + y);
+        });
     }
 
     @Override
@@ -131,8 +143,8 @@ public class App implements MyInterface, Runnable {
 
     @Override
     public void run() {
-     // Thread th = Thread.currentThread();
-       // System.out.println(this.flag);
+        // Thread th = Thread.currentThread();
+        // System.out.println(this.flag);
         this.flag = true;
         System.gc();
     }
