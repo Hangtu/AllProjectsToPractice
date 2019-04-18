@@ -1,0 +1,170 @@
+[
+	{
+		"id": 1,
+		"name": "Mocha",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 2,
+		"name": "Chai",
+		"type": "Hot",
+		"price": 10.0
+	},
+	{
+		"id": 3,
+		"name": "Cappuchino",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 4,
+		"name": "Latte",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 5,
+		"name": "Kaapi",
+		"type": "Hot",
+		"price": 20.0
+	},
+	{
+		"id": 6,
+		"name": "Tea",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 7,
+		"name": "Frappe",
+		"type": "Cold",
+		"price": 60.0
+	},
+	{
+		"id": 8,
+		"name": "Mocha_1",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 9,
+		"name": "Chai_1",
+		"type": "Hot",
+		"price": 10.0
+	},
+	{
+		"id": 10,
+		"name": "Cappuchino_1",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 11,
+		"name": "Tea_1",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 12,
+		"name": "Frappe_1",
+		"type": "Cold",
+		"price": 60.0
+	},
+	{
+		"id": 13,
+		"name": "Latte_1",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 14,
+		"name": "Kaapi_1",
+		"type": "Hot",
+		"price": 20.0
+	},
+	{
+		"id": 15,
+		"name": "Mocha_3",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 16,
+		"name": "Chai_3",
+		"type": "Hot",
+		"price": 10.0
+	},
+	{
+		"id": 17,
+		"name":"Cappuchino_3",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 18,
+		"name": "Latte_3",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 19,
+		"name": "Kaapi_3",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 20,
+		"name":"Tea_3",
+		"type": "Hot",
+		"price": 20.0
+	},
+	{
+		"id": 21,
+		"name": "Frappe_3",
+		"type": "Cold",
+		"price": 60.0
+	},
+	{
+		"id": 22,
+		"name":"Mocha_2",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 23,
+		"name":"Chai_2",
+		"type": "Hot",
+		"price": 20.0
+	},
+	{
+		"id": 24,
+		"name":"Cappuchino_2",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 25,
+		"name":"Latte_2",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 26,
+		"name":"Kaapi_2",
+		"type": "Hot",
+		"price": 10.0
+	},
+	{
+		"id": 27,
+		"name":"Tea_2",
+		"type": "Hot",
+		"price": 60.0
+	},
+	{
+		"id": 28,
+		"name":"Frappe_2",
+		"type": "Cold",
+		"price": 60.0
+	}
+]
