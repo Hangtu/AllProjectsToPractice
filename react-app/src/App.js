@@ -2,8 +2,30 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Header from './header/Header';
+
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {names:[{
+      name: "Paco",
+    },
+    {
+      name: "Juan"
+    }
+    ]}
+  }
+
+
+
   render() {
+    const rends = this.state.names.map(element => {
+      return (
+        <p>{element.name}</p>
+     )
+    });
+  
     return (
       <div className="App">
         <header className="App-header">
@@ -11,15 +33,9 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+            {rends}
         </header>
+        <Header title="Hello Hang Tu" />
       </div>
     );
   }
