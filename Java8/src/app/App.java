@@ -129,7 +129,7 @@ public class App implements MyInterface, Runnable {
         m.put(100, "Hello");
         m.put(101, "Geeks");
         m.put(102, "Geeks");
-        m.put(null, "Geeks");
+        // m.put(null, "Geeks");
 
         m.forEach((x, y) -> {
             System.out.println(x + "" + y);
