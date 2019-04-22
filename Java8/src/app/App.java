@@ -134,6 +134,14 @@ public class App implements MyInterface, Runnable {
         m.forEach((x, y) -> {
             System.out.println(x + "" + y);
         });
+
+        //final ArrayList<String> finalList = new ArrayList<>();
+
+       // finalList.add("e");
+
+
+        //finalList = aList;
+
     }
 
     @Override
