@@ -11,8 +11,6 @@ import java.util.stream.Collectors;
 
 public class App implements MyInterface, Runnable {
 
-    private volatile Boolean flag = false;
-
     public static void main(String[] args) throws Exception {
 
         System.out.println("Hello Java 8");
@@ -125,7 +123,7 @@ public class App implements MyInterface, Runnable {
             // System.out.println(x);
         });
 
-        ConcurrentHashMap m = new ConcurrentHashMap();
+        ConcurrentHashMap<Integer,String> m = new ConcurrentHashMap<>();
         m.put(100, "HelloH");
         m.put(101, "Geeks");
         m.put(102, "Geeks");
@@ -153,7 +151,6 @@ public class App implements MyInterface, Runnable {
     public void run() {
         // Thread th = Thread.currentThread();
         // System.out.println(this.flag);
-        this.flag = true;
         System.gc();
     }
 }

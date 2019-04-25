@@ -6,6 +6,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "com.example.wicket.javawicket.DemoApplication"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Home",
             "request": "launch",
             "mainClass": "app.Home"
