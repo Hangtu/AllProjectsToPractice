@@ -66,6 +66,7 @@ public final class GuestBook extends WebPage {
             commentList.add(0, comment);
             // Clear out the text component
             values.put("text", "");
+            values.put("comment", "");
         }
     }
     /**
