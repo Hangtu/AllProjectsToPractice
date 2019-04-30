@@ -8,5 +8,9 @@ import org.apache.wicket.markup.html.basic.Label;
 public class FirstPage extends WebPage {
     public FirstPage() {
         add(new Label("message", "Hello Apache Wicket 1"));
+        add(new Label("helloWorldMessage", "Hello world!!!"));
     }
+
+	public FirstPage(User loggedUser) {
+	}
 }
