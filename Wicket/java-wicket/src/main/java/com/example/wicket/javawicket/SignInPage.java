@@ -30,13 +30,15 @@ public class SignInPage extends WebPage {
 
         @Override
         protected void onSubmit() {
-          User loggedUser = ((WicketApplication) WebApplication.get()).getUser(user.getUsername(), user.getPassword());
+            // User loggedUser = ((WicketApplication)
+            // WebApplication.get()).getUser(user.getUsername(), user.getPassword());
+            User loggedUser = new User();
+            loggedUser.setName("Hang Tu");
             if (loggedUser != null) {
                 setResponsePage(new FirstPage(loggedUser));
-            }
-            else {
+            } else {
                 // Register the error message with the feedback// panel
-              error("Wrong username or password");
+                error("Wrong username or password");
             }
         }
     }
