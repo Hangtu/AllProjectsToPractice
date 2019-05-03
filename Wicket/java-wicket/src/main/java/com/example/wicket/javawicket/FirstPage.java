@@ -32,6 +32,7 @@ public class FirstPage extends WebPage {
         add(new Link("signout") {
             @Override
             public void onClick() {
+                System.out.println("Trying to exit");
                 setResponsePage(SignInPage.class);
             }
 

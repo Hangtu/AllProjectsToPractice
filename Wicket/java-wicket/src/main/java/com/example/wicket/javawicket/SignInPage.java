@@ -2,16 +2,18 @@ package com.example.wicket.javawicket;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.protocol.http.WebApplication;
 
 public class SignInPage extends WebPage {
 
+    private DropDownChoice<String> type; 
     private User user;
+    
 
     public SignInPage() {
         user = new User();
@@ -32,10 +34,10 @@ public class SignInPage extends WebPage {
         protected void onSubmit() {
             // User loggedUser = ((WicketApplication)
             // WebApplication.get()).getUser(user.getUsername(), user.getPassword());
-            User loggedUser = new User();
-            loggedUser.setName("Hang Tu");
-            if (loggedUser != null) {
-                setResponsePage(new FirstPage(loggedUser));
+           
+            user.setName("Hang Tu");
+            if (user != null) {
+                setResponsePage(new FirstPage(user));
             } else {
                 // Register the error message with the feedback// panel
                 error("Wrong username or password");
