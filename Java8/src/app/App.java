@@ -18,7 +18,7 @@ public class App implements MyInterface, Runnable {
         System.out.println("Hello Java 8");
 
         // int[] b = new int[2];
-        // String myName = "Hang Tu";
+        
         int i = 0;
         int j = 1;
 
