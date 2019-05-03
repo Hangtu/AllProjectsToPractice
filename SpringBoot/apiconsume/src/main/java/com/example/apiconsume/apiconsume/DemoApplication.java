@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import com.example.apiconsume.apiconsume.user.MyResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -58,9 +60,15 @@ public class DemoApplication {
 		}
 
 		//WITHOUT MAPPER
-		ResponseEntity<MyResponse> response3 = restTemplate.exchange("https://reqres.in/api/users/2", HttpMethod.GET, entity,
-		MyResponse.class);
-		System.out.println(response3.getBody().getData().getLast_name());
+		ResponseEntity<MyResponse> response3;
+		try {
+			response3 = restTemplate.exchange("https://reqres.in/api/unknown/23", HttpMethod.GET, entity,
+			MyResponse.class);
+			System.out.println(response3.getBody().getData().getLast_name());
+		} catch (HttpClientErrorException e) {
+			System.out.println(e.getRawStatusCode()); // return 404
+		}
+
 		//MyResponse data = response.getBody();
 		//System.out.println(response);
 		//System.out.println("final");
