@@ -9,9 +9,28 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-public class App implements MyInterface, Runnable {
+public class App  extends FinalExample implements MyInterface, Runnable  {
+
+    public static final void overload(){
+        System.out.println("overload final");
+    }
+
+    public static final void overload(String e){
+        System.out.println("overload final 2");
+    }
+
+    /*@Override
+    public static final void override(){
+        System.out.println("override final");
+    }*/
+
 
     public static void main(String[] args) throws Exception {
+
+        App.overload();
+        App.overload("2");
+
+        FinalExample.override();
 
         System.out.println("Hello Java 8");
 
