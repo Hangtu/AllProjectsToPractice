@@ -25,10 +25,21 @@ public class App  extends FinalExample implements MyInterface, Runnable  {
     }*/
 
 
+   public static final void division(){
+        System.out.println(5/3);
+    }
+
+    public static final void division2(){
+        System.out.println((float)5/3);
+    }
+
+
     public static void main(String[] args) throws Exception {
 
         App.overload();
         App.overload("2");
+        App.division();
+        App.division2();
 
         FinalExample.override();
 
@@ -57,7 +68,7 @@ public class App  extends FinalExample implements MyInterface, Runnable  {
         // System.out.println(me.getName()); // get static member of the class;
 
         MyInterface myInterface = (x) -> {
-            // System.out.println(me.getId() * 4);
+            System.out.println(me.getId() * 4);
         };
         myInterface.multiplication(me); // Print the lambda expression;
 
@@ -125,11 +136,12 @@ public class App  extends FinalExample implements MyInterface, Runnable  {
         Set<String> hSet = new HashSet<>();
         hSet.add("b");
         hSet.add("a");
+        hSet.add("a");
         hSet.add("c");
         hSet.add("3");
 
         hSet.forEach(x -> {
-            // System.out.println(x);
+            System.out.println(x);
         });
 
         Set<String> tSet = new TreeSet<>();
@@ -139,7 +151,7 @@ public class App  extends FinalExample implements MyInterface, Runnable  {
         tSet.add("b");
 
         tSet.forEach(x -> {
-            // System.out.println(x);
+             System.out.println(x);
         });
 
         ConcurrentHashMap<Integer,String> m = new ConcurrentHashMap<>();
@@ -152,9 +164,14 @@ public class App  extends FinalExample implements MyInterface, Runnable  {
             System.out.println(x + "" + y);
         });
 
-        //final ArrayList<String> finalList = new ArrayList<>();
+        final ArrayList<String> finalList = new ArrayList<>();
 
-       // finalList.add("e");
+        finalList.add("e");
+        finalList.add("b");
+
+        finalList.forEach((x) -> {
+            System.out.println(x);
+        });
 
 
         //finalList = aList;
